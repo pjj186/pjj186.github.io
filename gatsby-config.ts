@@ -12,7 +12,7 @@ module.exports = {
     title: `Lenny.dev`,
     author: {
       name: `Lenny`,
-      summary: `프론트엔드를 주로 하고 있는 개발자입니다.\n꾸준히 공부해야하는데 빈둥거리는걸 너무 좋아해서 탈이에요. \n 여러분 오늘도 화이팅. 방문해주셔서 감사해요.`,
+      summary: `방문해주셔서 감사합니다.`,
     },
     description: `프론트엔드 개발자 Lenny의 기술 블로그. React, TypeScript, JavaScript 등 웹 개발 관련 글과 일상을 공유합니다.`,
     siteUrl: `https://pjj186.github.io/`,
@@ -187,7 +187,7 @@ module.exports = {
             serialize: ({
               query: { site, allMarkdownRemark },
             }: {
-              query: { site: any; allMarkdownRemark: any }
+              query: { site: any; allMarkdownRemark: any };
             }) => {
               return allMarkdownRemark.nodes.map((node: any) => {
                 return Object.assign({}, node.frontmatter, {
@@ -196,8 +196,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `{
               allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
@@ -235,4 +235,4 @@ module.exports = {
       },
     },
   ],
-}
+};
